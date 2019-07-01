@@ -1,0 +1,56 @@
+Fri Jun 28 15:55:04 2019 [14731][1][FATAL] Mysqli_query failed.
+Fri Jun 28 15:55:04 2019 [14731][1][FATAL]  Query Failed: SELECT count(*) c FROM (SELECT `bw_transaction_contacts`.id AS 'Client0', `contacts:bw_transaction_contacts_cstm`.currency_id AS 'contacts:bw_transaction_contacts_currency_id', `contacts:bw_transaction_contacts`.cash AS 'Cash1', `contacts:bw_transaction_contacts`.cheque AS 'Cheque2', `contacts:bw_transaction_contacts`.rttgs AS 'RTTGS3', `contacts`.id AS 'contacts_id', `contacts:bw_transaction_contacts`.id AS 'contacts:bw_transaction_contacts_id', `bw_transaction_contacts`.id AS 'bw_transaction_contacts_id' FROM `contacts` LEFT JOIN bw_transaction_contacts_c `contacts|contacts:bw_transaction_contacts` ON `contacts`.id=`contacts|contacts:bw_transaction_contacts`.bw_transaction_contactscontacts_ida AND `contacts|contacts:bw_transaction_contacts`.deleted=0
+
+LEFT JOIN bw_transaction `contacts:bw_transaction_contacts` ON `contacts:bw_transaction_contacts`.id=`contacts|contacts:bw_transaction_contacts`.bw_transaction_contactsbw_transaction_idb AND `contacts:bw_transaction_contacts`.deleted=0
+LEFT JOIN bw_transaction_contacts_c `contacts|bw_transaction_contacts` ON `contacts`.id=`contacts|bw_transaction_contacts`.bw_transaction_contactsbw_transaction_idb AND `contacts|bw_transaction_contacts`.deleted=0
+
+LEFT JOIN contacts `bw_transaction_contacts` ON `bw_transaction_contacts`.id=`contacts|bw_transaction_contacts`.bw_transaction_contactscontacts_ida AND `bw_transaction_contacts`.deleted=0
+ WHERE (  `contacts:bw_transaction_contacts`.date_entered BETWEEN '2019-06-01 00:00:00' AND '2019-07-01 00:00:00' ) AND  contacts.deleted = 0 ) as n: MySQL error 1054: Unknown column 'contacts:bw_transaction_contacts_cstm.currency_id' in 'field list'
+Fri Jun 28 15:55:04 2019 [14731][1][FATAL] Mysqli_query failed.
+Fri Jun 28 15:55:04 2019 [14731][1][FATAL]  Query Failed: SELECT `bw_transaction_contacts`.id AS 'Client0', `contacts:bw_transaction_contacts_cstm`.currency_id AS 'contacts:bw_transaction_contacts_currency_id', `contacts:bw_transaction_contacts`.cash AS 'Cash1', `contacts:bw_transaction_contacts`.cheque AS 'Cheque2', `contacts:bw_transaction_contacts`.rttgs AS 'RTTGS3', `contacts`.id AS 'contacts_id', `contacts:bw_transaction_contacts`.id AS 'contacts:bw_transaction_contacts_id', `bw_transaction_contacts`.id AS 'bw_transaction_contacts_id' FROM `contacts` LEFT JOIN bw_transaction_contacts_c `contacts|contacts:bw_transaction_contacts` ON `contacts`.id=`contacts|contacts:bw_transaction_contacts`.bw_transaction_contactscontacts_ida AND `contacts|contacts:bw_transaction_contacts`.deleted=0
+
+LEFT JOIN bw_transaction `contacts:bw_transaction_contacts` ON `contacts:bw_transaction_contacts`.id=`contacts|contacts:bw_transaction_contacts`.bw_transaction_contactsbw_transaction_idb AND `contacts:bw_transaction_contacts`.deleted=0
+LEFT JOIN bw_transaction_contacts_c `contacts|bw_transaction_contacts` ON `contacts`.id=`contacts|bw_transaction_contacts`.bw_transaction_contactsbw_transaction_idb AND `contacts|bw_transaction_contacts`.deleted=0
+
+LEFT JOIN contacts `bw_transaction_contacts` ON `bw_transaction_contacts`.id=`contacts|bw_transaction_contacts`.bw_transaction_contactscontacts_ida AND `bw_transaction_contacts`.deleted=0
+ WHERE (  `contacts:bw_transaction_contacts`.date_entered BETWEEN '2019-06-01 00:00:00' AND '2019-07-01 00:00:00' ) AND  contacts.deleted = 0  LIMIT 0,20: MySQL error 1054: Unknown column 'contacts:bw_transaction_contacts_cstm.currency_id' in 'field list'
+Fri Jun 28 15:56:07 2019 [11729][1][FATAL] [ERROR] Failed to remove bean to index
+Fri Jun 28 15:56:07 2019 [11729][1][FATAL] [ERROR] SuiteCRM\Search\Exceptions\SearchException: Elasticsearch trying to re-indexing a bean but indexer is disabled in configuration. in /home/bhargav_vaghasiya/htdocs/FexCRM/lib/Search/ElasticSearch/ElasticSearchHooks.php:123
+Stack trace:
+#0 /home/bhargav_vaghasiya/htdocs/FexCRM/lib/Search/ElasticSearch/ElasticSearchHooks.php(105): SuiteCRM\Search\ElasticSearch\ElasticSearchHooks->reIndex(Object(AOR_Condition))
+#1 /home/bhargav_vaghasiya/htdocs/FexCRM/lib/Search/ElasticSearch/ElasticSearchHooks.php(92): SuiteCRM\Search\ElasticSearch\ElasticSearchHooks->reIndexSafe(Object(AOR_Condition))
+#2 /home/bhargav_vaghasiya/htdocs/FexCRM/include/utils/LogicHook.php(272): SuiteCRM\Search\ElasticSearch\ElasticSearchHooks->beanDeleted(Object(AOR_Condition), 'after_delete', Array)
+#3 /home/bhargav_vaghasiya/htdocs/FexCRM/include/utils/LogicHook.php(213): LogicHook->process_hooks(Array, 'after_delete', Array)
+#4 /home/bhargav_vaghasiya/htdocs/FexCRM/data/SugarBean.php(3129): LogicHook->call_custom_logic('AOR_Conditions', 'after_delete', Array)
+#5 /home/bhargav_vaghasiya/htdocs/FexCRM/data/SugarBean.php(5267): SugarBean->call_custom_logic('after_delete', Array)
+#6 /home/bhargav_vaghasiya/htdocs/FexCRM/modules/AOR_Conditions/AOR_Condition.php(110): SugarBean->mark_deleted('')
+#7 /home/bhargav_vaghasiya/htdocs/FexCRM/modules/AOR_Reports/AOR_Report.php(122): AOR_Condition->save_lines(Array, Object(AOR_Report), 'aor_conditions_')
+#8 /home/bhargav_vaghasiya/htdocs/FexCRM/include/MVC/Controller/SugarController.php(684): AOR_Report->save(false)
+#9 /home/bhargav_vaghasiya/htdocs/FexCRM/include/MVC/Controller/SugarController.php(525): SugarController->action_save()
+#10 /home/bhargav_vaghasiya/htdocs/FexCRM/include/MVC/Controller/SugarController.php(494): SugarController->do_action()
+#11 /home/bhargav_vaghasiya/htdocs/FexCRM/include/MVC/Controller/SugarController.php(468): SugarController->handle_action()
+#12 /home/bhargav_vaghasiya/htdocs/FexCRM/include/MVC/Controller/SugarController.php(373): SugarController->process()
+#13 /home/bhargav_vaghasiya/htdocs/FexCRM/include/MVC/SugarApplication.php(113): SugarController->execute()
+#14 /home/bhargav_vaghasiya/htdocs/FexCRM/index.php(53): SugarApplication->execute()
+#15 {main}
+Fri Jun 28 15:56:47 2019 [12390][1][FATAL] [ERROR] Failed to remove bean to index
+Fri Jun 28 15:56:47 2019 [12390][1][FATAL] [ERROR] SuiteCRM\Search\Exceptions\SearchException: Elasticsearch trying to re-indexing a bean but indexer is disabled in configuration. in /home/bhargav_vaghasiya/htdocs/FexCRM/lib/Search/ElasticSearch/ElasticSearchHooks.php:123
+Stack trace:
+#0 /home/bhargav_vaghasiya/htdocs/FexCRM/lib/Search/ElasticSearch/ElasticSearchHooks.php(105): SuiteCRM\Search\ElasticSearch\ElasticSearchHooks->reIndex(Object(AOR_Field))
+#1 /home/bhargav_vaghasiya/htdocs/FexCRM/lib/Search/ElasticSearch/ElasticSearchHooks.php(92): SuiteCRM\Search\ElasticSearch\ElasticSearchHooks->reIndexSafe(Object(AOR_Field))
+#2 /home/bhargav_vaghasiya/htdocs/FexCRM/include/utils/LogicHook.php(272): SuiteCRM\Search\ElasticSearch\ElasticSearchHooks->beanDeleted(Object(AOR_Field), 'after_delete', Array)
+#3 /home/bhargav_vaghasiya/htdocs/FexCRM/include/utils/LogicHook.php(213): LogicHook->process_hooks(Array, 'after_delete', Array)
+#4 /home/bhargav_vaghasiya/htdocs/FexCRM/data/SugarBean.php(3129): LogicHook->call_custom_logic('AOR_Fields', 'after_delete', Array)
+#5 /home/bhargav_vaghasiya/htdocs/FexCRM/data/SugarBean.php(5267): SugarBean->call_custom_logic('after_delete', Array)
+#6 /home/bhargav_vaghasiya/htdocs/FexCRM/modules/AOR_Fields/AOR_Field.php(115): SugarBean->mark_deleted('f4670dcd-e99f-3...')
+#7 /home/bhargav_vaghasiya/htdocs/FexCRM/modules/AOR_Reports/AOR_Report.php(118): AOR_Field->save_lines(Array, Object(AOR_Report), 'aor_fields_')
+#8 /home/bhargav_vaghasiya/htdocs/FexCRM/include/MVC/Controller/SugarController.php(684): AOR_Report->save(false)
+#9 /home/bhargav_vaghasiya/htdocs/FexCRM/include/MVC/Controller/SugarController.php(525): SugarController->action_save()
+#10 /home/bhargav_vaghasiya/htdocs/FexCRM/include/MVC/Controller/SugarController.php(494): SugarController->do_action()
+#11 /home/bhargav_vaghasiya/htdocs/FexCRM/include/MVC/Controller/SugarController.php(468): SugarController->handle_action()
+#12 /home/bhargav_vaghasiya/htdocs/FexCRM/include/MVC/Controller/SugarController.php(373): SugarController->process()
+#13 /home/bhargav_vaghasiya/htdocs/FexCRM/include/MVC/SugarApplication.php(113): SugarController->execute()
+#14 /home/bhargav_vaghasiya/htdocs/FexCRM/index.php(53): SugarApplication->execute()
+#15 {main}
+Mon Jul  1 12:20:57 2019 [8691][-none-][FATAL] SECURITY: User authentication for admin failed
+Mon Jul  1 12:20:58 2019 [8691][-none-][FATAL] FAILED LOGIN:attempts[1], ip[127.0.0.1], username[admin]
